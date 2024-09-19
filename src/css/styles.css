@@ -12,34 +12,34 @@
 }
 .form-field {
   width: 272px;
-height: 40px;
-box-sizing: border-box;
-border-radius: 4px;
-background-color: #fff;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #fff;
 }
 .search-button {
   border-radius: 8px;
-padding: 8px 16px;
-width: 91px;
-height: 40px;
-background-color: #4e75ff;
-font-weight: 500;
-font-size: 16px;
-line-height: 1.2;
-letter-spacing: 0.04em;
-color: #fff;
-box-sizing: border-box;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+  background-color: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #fff;
+  box-sizing: border-box;
 }
 .search-button:hover {
   background-color: #6c8cff;
 }
 .form-field::placeholder {
- padding:8px 16px; 
-font-weight: 400;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: 0.04em;
-color: #808080;
+  padding:8px 16px; 
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #808080;
 }
 .form-field:hover {
   border: 1px solid #000;
@@ -51,6 +51,7 @@ color: #808080;
   flex-wrap: wrap;
   gap: 24px;
   box-sizing: border-box;
+  padding: 0 80px;
 }
 
 .card {
@@ -94,3 +95,36 @@ color: #808080;
   letter-spacing: 0.04em;
   color: #2e2f42;
 }
+.loader {
+  display: inline-block;
+  transform: translateZ(1px);
+}
+.loader:after {
+  content: '';
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin: 8px;
+  border-radius: 50%;
+  background: #fff;
+  animation: coin-flip 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes coin-flip {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
+.hidden {
+  display: none;
+}
+

@@ -6,6 +6,7 @@ import { renderImages } from "./js/render-functions.js";
 const refs = {
   form: document.querySelector(".form"),
   gallery: document.querySelector(".gallery"),
+  loader: document.querySelector(".loader"),
 };
 
 refs.form.addEventListener("submit", onFormSubmit);
@@ -26,6 +27,7 @@ function onFormSubmit(event) {
   }
 
   refs.gallery.innerHTML = "";
+  showLoader();
 
   fetchPixabay(query)
     .then(data => {
@@ -49,6 +51,14 @@ function onFormSubmit(event) {
       });
     })
     .finally(() => {
+      hideLoader();
       refs.form.reset();
     });
+}
+function showLoader() {
+  refs.loader.classList.remove("hidden");
+}
+
+function hideLoader() {
+  refs.loader.classList.add("hidden");
 }
